@@ -1,0 +1,27 @@
+Install laravel 9
+composer create-project laravel/laravel:^9.0 example-app
+
+Install breeze
+composer require laravel/breeze --dev
+php artisan breeze:install blade
+//fix database before running migration
+Update your /app/Providers/AppServiceProvider.php to contain:
+use Illuminate\Support\Facades\Schema;
+
+/**
+ * Bootstrap any application services.
+ *
+ * @return void
+ */
+public function boot()
+{
+    Schema::defaultStringLength(191);
+}
+database.php file in config folder. Just edit
+'charset' => 'utf8',
+'collation' => 'utf8_unicode_ci',
+
+php artisan migrate
+npm install
+npm run dev
+
