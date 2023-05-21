@@ -25,3 +25,5 @@ php artisan migrate
 npm install
 npm run dev
 
+Create Controller
+php artisan make:controller AdminController
