@@ -27,3 +27,15 @@ npm run dev
 
 Create Controller
 php artisan make:controller AdminController
+
+Create Model with migration
+php artisan make:model HomeSlide -m
+
+Install Image intervention for resizing
+composer require intervention/image
+
+Add to config/app.php
+Intervention\Image\ImageServiceProvider::class,
+'Image' => Intervention\Image\Facades\Image::class,
+
+php artisan vendor:publish --provider="Intervention\Image\ImageServiceProviderLaravelRecent"
