@@ -30,6 +30,7 @@ php artisan make:controller AdminController
 
 Create Model with migration
 php artisan make:model HomeSlide -m
+php artisan migrate
 
 Install Image intervention for resizing
 composer require intervention/image
