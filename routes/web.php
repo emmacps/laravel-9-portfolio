@@ -9,6 +9,7 @@ use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\FooterController;
+use App\Http\Controllers\Home\ContactController;
 
 
 Route::get('/', function () {
@@ -111,6 +112,16 @@ Route::controller(BlogCategoryController::class)->group(function () {
 Route::controller(FooterController::class)->group(function () {
     Route::get('/footer/setup', 'FooterSetup')->name('footer.setup');
     Route::post('/update/footer', 'UpdateFooter')->name('update.footer');
+
+});
+
+
+// Conatact All Route 
+Route::controller(ContactController::class)->group(function () {
+    Route::get('/contact', 'Contact')->name('contact.me');
+    Route::post('/store/message', 'StoreMessage')->name('store.message');
+    Route::get('/contact/message', 'ContactMessage')->name('contact.message');
+    Route::get('/delete/message/{id}', 'DeleteMessage')->name('delete.message');
 
 });
 
