@@ -8,6 +8,7 @@ use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\BlogController;
+use App\Http\Controllers\Home\FooterController;
 
 
 Route::get('/', function () {
@@ -103,6 +104,14 @@ Route::controller(BlogCategoryController::class)->group(function () {
     Route::get('/category/blog/{id}', 'CategoryBlog')->name('category.blog');
 
     Route::get('/blog', 'HomeBlog')->name('home.blog');
+});
+
+
+// Footer All Route 
+Route::controller(FooterController::class)->group(function () {
+    Route::get('/footer/setup', 'FooterSetup')->name('footer.setup');
+    Route::post('/update/footer', 'UpdateFooter')->name('update.footer');
+
 });
 
 
